@@ -1,0 +1,24 @@
+//Language:java
+//Link: https://codeforces.com/group/MWSDmqGsZm/contest/219856/problem/N
+
+
+/**
+ *
+ * @author kareem
+ */
+public class Problem {
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int n = scanner.nextInt(), t = 1;
+        String s = scanner.next();
+
+        for (int i = 0; i < n - 1; i++) {
+            if (s.charAt(i) != s.charAt(i + 1)) {
+                t++;
+            }
+        }
+        scanner.close();
+        System.out.println(t);
+    }
+}
