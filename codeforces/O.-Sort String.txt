@@ -1,0 +1,27 @@
+//Language:c++
+//Link: https://codeforces.com/group/MWSDmqGsZm/contest/219856/problem/O
+
+#include <iostream>
+#include <vector>
+using namespace std;
+ 
+int main() {
+    int arr[26] = {0}; 
+    int n;  
+    cin >> n;
+    
+    for (int i = 0; i < n; i++) { 
+        char c;
+        cin>>c;
+        arr[c - 'a']++;
+    }
+    
+    for (int i = 0; i < 26; i++) {
+        while (arr[i] > 0) {
+            cout << char(i + 'a');
+            arr[i]--;
+        }
+    }
+    return 0;
+}
+ 
