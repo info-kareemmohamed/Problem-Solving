@@ -1,0 +1,25 @@
+Language:java
+Link:https://codeforces.com/group/MWSDmqGsZm/contest/219856/problem/P
+
+import java.util.Scanner;
+
+/**
+ *
+ * @author kareem
+ */
+public class Problem {
+
+    public static void main(String[] args) {
+
+        Scanner scanner = new Scanner(System.in);
+        String word = scanner.nextLine();
+        int n = word.length(), count = 1;
+        for (int i = 1; i < n - 1; i++) {
+            if (!(word.charAt(i) >= 'A' && word.charAt(i) <= 'z') && (word.charAt(i + 1) >= 'A' && word.charAt(i + 1) <= 'z')) {
+                count++;
+            }
+        }
+        System.out.println(count);
+    }
+
+}
