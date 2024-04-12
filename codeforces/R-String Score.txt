@@ -1,0 +1,53 @@
+//Language:c++
+//Link: https://codeforces.com/group/MWSDmqGsZm/contest/219856/problem/R
+
+
+
+#include <iostream>
+using namespace std;
+
+int main() {
+    int n, score = 0;
+    cin >> n;
+    string word;
+    cin >> word;
+    
+    for (int i = 0; i < n; i++) {
+        switch (word[i]) {
+            case 'V':
+                score += 5;
+                break;
+            case 'W':
+                score += 2;
+                break;
+            case 'X':
+                if (i < n - 1) {
+                    i++;
+                }
+                break;
+            case 'Y':
+                if (i < n - 1) {
+                    word += word[i + 1];
+                    n++;
+                    i++;
+                }
+                break;
+            case 'Z':
+                if (i < n - 1) {
+                    char c = word[i + 1];
+                    if (c == 'V') {
+                        score /= 5;
+                        i++;
+                    } else if (c == 'W') {
+                        score /= 2;
+                        i++;
+                    }
+                }
+                break;
+        }
+    }
+    
+    cout << score << endl;
+
+    return 0;
+}
