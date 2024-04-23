@@ -1,0 +1,38 @@
+Language:java
+Link:https://codeforces.com/group/MWSDmqGsZm/contest/219856/problem/U
+
+
+
+
+import java.util.Scanner;
+
+/**
+ *
+ * @author kareem
+ */
+public class Problem {
+
+    public static void main(String[] args) {
+
+        Scanner scanner = new Scanner(System.in);
+        String word = scanner.nextLine();
+        int n = word.length(), man=Integer.MAX_VALUE;
+        int[] letters = new int[5];
+        for (int i = 0; i < n; i++) {
+            switch (word.charAt(i)) {
+                case 'E', 'e' -> letters[0]++;
+                case 'G', 'g' -> letters[1]++;
+                case 'Y', 'y' -> letters[2]++;
+                case 'P', 'p' -> letters[3]++;
+                case 'T', 't' -> letters[4]++;
+            }
+        }
+        
+        for(int i=0;i<5;i++) man=letters[i]<man?letters[i]:man;
+
+        System.out.println(man);
+       
+        
+
+    }
+}
