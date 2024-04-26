@@ -1,0 +1,28 @@
+Language:java
+Link: https://codeforces.com/group/MWSDmqGsZm/contest/223205/problem/A
+
+
+
+import java.util.Scanner;
+
+/**
+ *
+ * @author kareem
+ */
+public class Problem {
+
+    public static void main(String[] args) {
+
+        Scanner scanner = new Scanner(System.in);
+        int num1 = scanner.nextInt(),num2=scanner.nextInt();
+       System.out.println(sum(num1, num2));
+    
+
+    }
+
+    
+    public static int sum(int num1,int num2){
+    return num1+num2;
+    }
+    
+}
