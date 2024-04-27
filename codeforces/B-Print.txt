@@ -1,0 +1,30 @@
+Language:java
+Link: https://codeforces.com/group/MWSDmqGsZm/contest/223205/problem/B
+
+
+
+
+import java.util.Scanner;
+
+/**
+ *
+ * @author kareem
+ */
+public class Problem {
+
+    public static void main(String[] args) {
+
+        Scanner scanner = new Scanner(System.in);
+        int number = scanner.nextInt();
+        print(number);
+    
+
+    }
+
+    
+    public static void print(int number){
+   for(int i=1;i<number;i++)System.out.print(i+" ");
+        System.out.print(number+"\n");
+    }
+    
+}
