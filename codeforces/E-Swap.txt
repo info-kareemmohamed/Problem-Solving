@@ -1,0 +1,24 @@
+Language:java
+Link: https://codeforces.com/group/MWSDmqGsZm/contest/223205/problem/E
+
+
+import java.util.Scanner;
+
+/**
+ *
+ * @author kareem
+ */
+public class Problem {
+
+    public static void main(String[] args) {
+
+        Scanner scanner = new Scanner(System.in);
+        int x = scanner.nextInt() , y = scanner.nextInt();
+        System.out.println(y+" "+x);
+    
+
+    }
+
+    
+   
+}
