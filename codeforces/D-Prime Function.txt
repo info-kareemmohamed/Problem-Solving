@@ -1,0 +1,33 @@
+Language:java
+Link: https://codeforces.com/group/MWSDmqGsZm/contest/223205/problem/D
+
+
+import java.util.Scanner;
+
+/**
+ *
+ * @author kareem
+ */
+public class Problem {
+
+    public static void main(String[] args) {
+
+        Scanner scanner = new Scanner(System.in);
+        int t = scanner.nextInt();
+        while (t-- > 0) {
+            int num = scanner.nextInt();
+            System.out.println(isPrime(num) ? "YES" : "NO");
+        }
+    }
+
+    public static boolean isPrime(int num) {
+        if(num==1)return false;
+        for (int i = 2; i <= Math.sqrt(num); i++) {
+            if (num % i == 0 && num != 2) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+}
