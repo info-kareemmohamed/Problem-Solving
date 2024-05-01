@@ -1,12 +1,12 @@
 # Problem-Solving
 
-##Repository Content:
+# Repository Content:
 
-##Codeforces:
+# Codeforces:
 This section includes solutions to a set of problems from the Codeforces platform. The problems are organized by problem ID and difficulty level.
-##Leetcode:
+# Leetcode:
 This section contains solutions to various problems from the Leetcode platform. Problems are categorized by their tags and difficulty level for easy access.
-##Features:
+# Features:
 
 Easy Accessibility: The repository is well-organized to facilitate finding the required solutions.
 Regular Updates: The repository is regularly updated to add solutions to new problems and update existing ones.
@@ -21,8 +21,8 @@ We welcome contributions from individuals. Potential contributors can open pull 
 
 
 
-#Codeforces
+# Codeforces
 https://codeforces.com/profile/karem.mohamed
 
-#Leetcode 
+# Leetcode 
 https://leetcode.com/km2020614/
