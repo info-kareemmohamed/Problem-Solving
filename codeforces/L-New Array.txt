@@ -1,0 +1,29 @@
+//Language:java
+//Link: https://codeforces.com/group/MWSDmqGsZm/contest/223205/problem/L
+
+
+
+
+
+import java.util.Scanner;
+
+/**
+ *
+ * @author kareem
+ */
+public class Problem {
+
+    public static void main(String[] args) {
+
+        Scanner scanner = new Scanner(System.in);
+        int n = scanner.nextInt(),size=n;
+        int arr[]=new int [n],arr2[]=new int[n];
+        for(int i=0;i<n;i++)arr[i]=scanner.nextInt();
+        for(int i=0;i<n;i++)arr2[i]=scanner.nextInt();
+        
+        for(int i=0;i<size;i++)System.out.print(arr2[i]+" ");
+        for(int i=0;i<size;i++)System.out.print(arr[i]+" ");
+    }
+
+   
+}
