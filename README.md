@@ -1,17 +1,17 @@
 # Problem-Solving
 
-#Repository Content:
+##Repository Content:
 
-#Codeforces:
+##Codeforces:
 This section includes solutions to a set of problems from the Codeforces platform. The problems are organized by problem ID and difficulty level.
-#Leetcode:
+##Leetcode:
 This section contains solutions to various problems from the Leetcode platform. Problems are categorized by their tags and difficulty level for easy access.
-#Features:
+##Features:
 
 Easy Accessibility: The repository is well-organized to facilitate finding the required solutions.
 Regular Updates: The repository is regularly updated to add solutions to new problems and update existing ones.
 Knowledge Sharing: The repository enables sharing knowledge and expertise in solving programming problems with the community.
-#Disclaimer:
+##Disclaimer:
 
 Please use the solutions provided in this repository only as a reference for understanding different ways to solve programming problems. Copying or publishing solutions as personal work is discouraged.
 
