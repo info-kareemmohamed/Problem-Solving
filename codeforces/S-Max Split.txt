@@ -1,0 +1,45 @@
+Language:java
+Link: https://codeforces.com/group/MWSDmqGsZm/contest/219856/problem/S
+
+
+
+
+import java.util.LinkedList;
+import java.util.Scanner;
+
+/**
+ *
+ * @author kareem
+ */
+public class Problem {
+
+    public static void main(String[] args) {
+
+        Scanner scanner = new Scanner(System.in);
+        String s = scanner.nextLine(), answer = "";
+        int l = 0, r = 0, n = s.length();
+        LinkedList<String> linkedList = new LinkedList<>();
+
+        for (int i = 0; i < n; i++) {
+            if (s.charAt(i) == 'L') {
+                l++;
+                answer += "L";
+            } else {
+                r++;
+                answer += "R";
+            }
+
+            if (r == l) {
+                linkedList.push(answer);
+                answer = "";
+            }
+
+        }
+
+        System.out.println(linkedList.size());
+        for (String element : linkedList) {
+            System.out.println(element);
+        }
+
+    }
+}
