@@ -1,0 +1,56 @@
+//Language:java
+//Link: https://codeforces.com/group/MWSDmqGsZm/contest/219856/problem/W
+
+
+
+//Note : 
+//Used numerical comparison in if and else if statements, and getting the index from a key because thinking of arranging letters and numbers in order.
+ //That's why used mathematical operations to determine the index from the original without iterating through a for loop.
+
+
+
+
+import java.util.Scanner;
+
+/**
+ *
+ * @author kareem
+ */
+public class Problem {
+
+    public static void main(String[] args) {
+
+        Scanner scanner = new Scanner(System.in);
+        int q = scanner.nextInt();
+        String s = scanner.next(), original = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789",
+                key = "PgEfTYaWGHjDAmxQqFLRpCJBownyUKZXkbvzIdshurMilNSVOtec#@_!=.+-*/";
+        int n = s.length(), index = 0, keySize = key.length();
+        System.out.println("");
+        if (q == 1) {
+            for (int i = 0; i < n; i++) {
+                if (s.charAt(i) >= 65 && s.charAt(i) < 91) {
+                    index = (s.charAt(i) - 65) + 26;
+                } else if (s.charAt(i) >= 97 && s.charAt(i) < 123) {
+                    index = (s.charAt(i) - 97);
+                } else if (s.charAt(i) >= 48 && s.charAt(i) < 58) {
+                    index = (s.charAt(i) - 48) + 52;
+                }
+
+                System.out.print(key.charAt(index));
+
+            }
+        } else {
+            for (int i = 0; i < n; i++) {
+
+                for (int j = 0; j < keySize; j++) {
+                    if (s.charAt(i) == key.charAt(j)) {
+                        System.out.print(original.charAt(j));
+                    }
+                }
+
+            }
+
+        }
+
+    }
+}
