@@ -1,0 +1,29 @@
+//Language:java
+//Link: https://codeforces.com/group/MWSDmqGsZm/contest/223339/problem/C
+
+
+
+import java.util.Scanner;
+
+/**
+ *
+ * @author kareem
+ */
+public class Problem {
+
+    public static void main(String[] args) {
+
+        Scanner scanner = new Scanner(System.in);
+        int n = scanner.nextInt();
+        print(n);
+    }
+
+    public static void print(int n) {
+        if (n == 0) return;
+
+        System.out.print(n>1? String.valueOf(n)+" ":String.valueOf(n));
+        print(n - 1);
+
+    }
+
+}
