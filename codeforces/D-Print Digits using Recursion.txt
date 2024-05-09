@@ -1,0 +1,40 @@
+//Language:java
+//Link: https://codeforces.com/group/MWSDmqGsZm/contest/223339/problem/D
+
+
+
+import java.util.Scanner;
+
+/**
+ *
+ * @author kareem
+ */
+public class Problem {
+
+    public static void main(String[] args) {
+
+        Scanner scanner = new Scanner(System.in);
+        int t = scanner.nextInt(), n;
+        while (t-- > 0) {
+            n = scanner.nextInt();
+            if (n == 0) 
+                System.out.print("0");
+             else 
+                PrintDigits(n);
+            
+
+            System.out.println("");
+        }
+
+    }
+
+    public static void PrintDigits(int n) {
+        if (n <= 0) 
+            return;
+        
+        PrintDigits(n / 10);
+
+        System.out.print(n % 10 + " ");
+    }
+
+}
