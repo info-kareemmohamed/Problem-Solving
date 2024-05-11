@@ -1,0 +1,33 @@
+//Language:java
+//Link: https://codeforces.com/group/MWSDmqGsZm/contest/223205/problem/J
+
+
+
+import java.util.Scanner;
+
+/**
+ *
+ * @author kareem
+ */
+public class Problem {
+
+    public static void main(String[] args) {
+
+        Scanner scanner = new Scanner(System.in);
+        int t = scanner.nextInt(),n=t;
+        double sum=0;
+        while (t-- > 0)  sum += scanner.nextFloat();
+           
+        System.out.printf("%.7f%n", average(sum, n));
+        
+
+    }
+    
+    
+   public static double average(double sum,int n){
+   return sum/n;
+   }
+
+
+
+}
