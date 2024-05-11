@@ -1,0 +1,29 @@
+//Language:java
+//Link: https://codeforces.com/group/MWSDmqGsZm/contest/223206/problem/C
+
+
+
+import java.util.Scanner;
+
+/**
+ *
+ * @author kareem
+ */
+public class Problem {
+
+    public static void main(String[] args) {
+
+        Scanner scanner = new Scanner(System.in);
+        int size = scanner.nextInt(), size2 = scanner.nextInt(), sum1 = 0, sum2 = 0;
+
+        while (size-- > 0) {
+            sum1 += scanner.nextInt();
+        }
+        while (size2-- > 0) {
+            sum2 += scanner.nextInt();
+        }
+        System.out.println(sum1 == sum2 ? "Yes" : "No");
+
+    }
+
+}
