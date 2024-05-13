@@ -1,0 +1,41 @@
+
+//Language:java
+//Link: https://codeforces.com/group/MWSDmqGsZm/contest/223339/problem/F
+
+
+import java.util.Scanner;
+
+/**
+ *
+ * @author kareem
+ */
+public class Problem {
+
+    public static void main(String[] args) {
+
+        Scanner scanner = new Scanner(System.in);
+        int n = scanner.nextInt(), i = 0;
+        int arr[] = new int[n];
+
+        while (i < n) {
+            arr[i++] = scanner.nextInt();
+        }
+        
+        printEven(arr, n-1);
+
+
+    }
+
+    public static void printEven(int[] arr, int n) {
+        if (n < 0) {
+            return;
+        }
+
+        if (n % 2 == 0) {
+            System.out.print(arr[n]+" ");
+        }
+           printEven(arr, n - 1);
+
+    }
+
+}
