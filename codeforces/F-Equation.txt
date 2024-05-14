@@ -1,0 +1,34 @@
+//Language:java
+//Link: https://codeforces.com/group/MWSDmqGsZm/contest/223205/problem/F
+
+
+
+
+
+import java.util.Scanner;
+
+/**
+ *
+ * @author kareem
+ */
+public class Problem {
+
+    public static void main(String[] args) {
+
+        Scanner scanner = new Scanner(System.in);
+        int X = scanner.nextInt();
+        int N = scanner.nextInt();
+
+        System.out.println(equation(X, N));
+
+    }
+
+    static long equation(int X, int N) {
+        long result = 0;
+        for (int i = 2; i <= N; i += 2) {
+            result += Math.pow(X, i);
+        }
+        return result;
+    }
+
+}
