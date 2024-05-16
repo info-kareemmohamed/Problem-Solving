@@ -1,0 +1,51 @@
+//Language:java
+//Link: https://codeforces.com/group/MWSDmqGsZm/contest/223205/problem/C
+
+
+
+import java.util.Scanner;
+
+/**
+ *
+ * @author kareem
+ */
+public class Problem {
+
+    public static void main(String[] args) {
+
+        Scanner scanner = new Scanner(System.in);
+        int n = scanner.nextInt();
+        System.out.println(isWonderful(n) ? "YES" : "NO");
+
+    }
+
+    private static boolean isWonderful(int n) {
+        return isOdd(n) && isPalindrome(n);
+    }
+
+    public static boolean isOdd(int n) {
+        return n % 2 == 1;
+    }
+
+    public static boolean isPalindrome(int n) {
+        int mod;
+        String s1 = "";
+        while (n != 0) {
+            mod = n % 2;
+            n = n / 2;
+            if (mod == 0) {
+                s1 += "0";
+            } else {
+                s1 += "1";
+            }
+        }
+
+        return s1.equals(reverse(s1));
+    }
+
+    public static String reverse(String s) {
+        StringBuilder sb = new StringBuilder(s);
+        return sb.reverse().toString();
+    }
+
+}
