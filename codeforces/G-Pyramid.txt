@@ -1,0 +1,36 @@
+//Language:java
+//Link: https://codeforces.com/group/MWSDmqGsZm/contest/223339/problem/G
+
+
+
+
+import java.util.Scanner;
+
+/**
+ *
+ * @author kareem
+ */
+public class Problem {
+
+    public static void main(String[] args) {
+
+        Scanner scanner = new Scanner(System.in);
+        int n = scanner.nextInt();
+        scanner.close();
+        StringBuilder result = new StringBuilder();
+
+        Buildpyramid(result,n, n);
+      System.out.print(result.toString());
+
+
+    }
+
+    public static void Buildpyramid (StringBuilder result,int n ,int stars ) {
+      if(n==0)return;
+      Buildpyramid(result,n-1,stars);
+      for(int i=1;i<=stars-n;i++)  result.append(' ');
+      for(int i=1;i<=n*2-1;i++)result.append('*');
+      result.append('\n');
+    }
+
+}
