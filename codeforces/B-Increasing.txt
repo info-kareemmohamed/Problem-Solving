@@ -1,0 +1,45 @@
+//Language:java
+//Link: https://codeforces.com/problemset/problem/1742/B
+
+
+
+
+
+
+
+
+import java.util.Scanner;
+import java.util.Set;
+import java.util.HashSet;
+/**
+ *
+ * @author kareem
+ */
+public class Problem {
+
+    public static void main(String[] args) {
+
+        Scanner scanner = new Scanner(System.in);
+        int t = scanner.nextInt();
+
+        for (int i = 0; i < t; i++) {
+            int n = scanner.nextInt();
+            int[] array = new int[n];
+            for (int j = 0; j < n; j++) {
+                array[j] = scanner.nextInt();
+            }
+
+            System.out.println(canBeStrictlyIncreasing(array) ? "YES" : "NO");
+
+        }
+        scanner.close();
+    }
+
+    private static boolean canBeStrictlyIncreasing(int[] array) {
+        Set<Integer> uniqueElements = new HashSet<>();
+        for (int num : array) {
+            uniqueElements.add(num);
+        }
+        return uniqueElements.size() == array.length;
+    }
+}
