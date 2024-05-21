@@ -1,0 +1,29 @@
+//Language:java
+//Link:https: https://codeforces.com/problemset/problem/1742/A
+
+
+
+import java.util.Scanner;
+
+/**
+ *
+ * @author kareem
+ */
+public class Problem {
+
+    public static void main(String[] args) {
+
+        Scanner scanner = new Scanner(System.in);
+        int t = scanner.nextInt();
+        for (int i = 0; i < t; i++) {
+            int a = scanner.nextInt();
+            int b = scanner.nextInt();
+            int c = scanner.nextInt();
+
+            System.out.println((a + b == c || a + c == b || b + c == a) ? "YES" : "NO");
+        }
+
+        scanner.close();
+    }
+
+}
