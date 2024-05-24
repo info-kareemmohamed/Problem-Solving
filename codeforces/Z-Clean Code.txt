@@ -1,0 +1,53 @@
+//Language:java
+//Link: https://codeforces.com/group/MWSDmqGsZm/contest/219856/problem/Z
+
+
+import java.util.Scanner;
+
+/**
+ *
+ * @author kareem
+ */
+public class Problem {
+
+    public static void main(String[] args) {
+
+        Scanner scanner = new Scanner(System.in);
+        boolean blockComment = false;
+
+        while (scanner.hasNextLine()) {
+            String line = scanner.nextLine().trim();
+            int n = line.length();
+            boolean newLine = false;
+            if (n == 0 || line.charAt(0) == ' ') {
+                continue;
+            }
+            for (int i = 0; i < n; i++) {
+                char c1 = line.charAt(i), c2 = ' ';
+                if (i < n - 1) {
+                    c2 = line.charAt(i + 1);
+                }
+
+                if (c1 == '/' && c2 == '/' && !blockComment) {
+                    break;
+                } else if (c1 == '/' && c2 == '*') {
+                    i++;
+                    blockComment = true;
+                } else if (c1 == '*' && c2 == '/' && blockComment) {
+                    i++;
+                    blockComment = false;
+                } else if (!blockComment) {
+                    System.out.print(c1);
+                    newLine = true;
+                }
+            }
+
+            if (newLine && !blockComment) {
+                System.out.println("");
+            }
+
+        }
+
+    }
+
+}
