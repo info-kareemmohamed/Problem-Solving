@@ -31,3 +31,56 @@ public class Problem {
 
     }
 }
+
+
+
+
+
+
+/////////////////////////////////////////
+
+
+//Another solution
+
+import java.util.Scanner;
+
+/**
+ *
+ * @author kareem
+ */
+public class Problem {
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int n = scanner.nextInt();
+        int[] arr = new int[n];
+        for (int i = 0; i < n; i++) {
+            arr[i] = scanner.nextInt();
+        }
+        shiftRight(arr, n);
+        for (int i = 0; i < n; i++) {
+            System.out.print(i == n - 1 ? arr[i] + "\n" : arr[i] + " ");
+        }
+
+    }
+
+    public static void shiftRight(int[] arr, int n) {
+        int L = 0, R = 0;
+        while (L < n) {
+            if (arr[L] != 0) {
+                if (L != R) {
+                    int temp = arr[R];
+                    arr[R] = arr[L];
+                    arr[L] = temp;
+                }
+                R++;
+                L++;
+            } else {
+                L++;
+            }
+
+        }
+    }
+}
+
+
