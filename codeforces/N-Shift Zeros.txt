@@ -1,0 +1,33 @@
+//Language:java
+//Link: https://codeforces.com/group/MWSDmqGsZm/contest/223205/problem/N
+
+
+
+import java.util.Scanner;
+
+/**
+ *
+ * @author kareem
+ */
+public class Problem {
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int n = scanner.nextInt(), zeroeCount = 0;
+
+        for (int i = 0; i < n; i++) {
+            int number = scanner.nextInt();
+            if (number != 0) {
+                System.out.print(number + " ");
+            } else {
+                zeroeCount++;
+            }
+        }
+
+       while(zeroeCount-->0){
+            System.out.print(( 0 > zeroeCount - 1) ? "0\n" : "0 ");
+        }
+        scanner.close();
+
+    }
+}
