@@ -1,0 +1,22 @@
+//Language:java
+//Link: https://codeforces.com/group/MWSDmqGsZm/contest/223338/problem/A
+
+
+
+
+import java.util.Scanner;
+
+/**
+ *
+ * @author kareem
+ */
+public class Problem {
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        long n = scanner.nextLong();
+        System.out.println(n > 0 && (n & (n - 1)) == 0 ? "YES" : "NO");
+
+    }
+
+}
