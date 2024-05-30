@@ -1,0 +1,32 @@
+//Language:java
+//Link:https://codeforces.com/group/MWSDmqGsZm/contest/223338/problem/C
+
+
+
+import java.util.Scanner;
+
+/**
+ *
+ * @author kareem
+ */
+public class Problem {
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        long n = scanner.nextLong(), n2 = scanner.nextLong(), start = Math.min(n, n2), end = Math.max(n, n2);
+        long even = sumEven(end / 2) - sumEven((start - 1) / 2), odd = sumOdd(end) - sumOdd(start - 1);
+        System.out.println((even + odd) + "\n" + even + "\n" + odd);
+
+    }
+
+    public static long sumOdd(long num) {
+        long res = (num + 1) / 2;
+        return res * res;
+
+    }
+
+    public static long sumEven(long num) {
+        return (num * (num + 1));
+    }
+
+}
