@@ -1,0 +1,25 @@
+//Language:java
+//Link: https://codeforces.com/group/MWSDmqGsZm/contest/223338/problem/D
+
+
+import java.util.Scanner;
+
+/**
+ *
+ * @author kareem
+ */
+public class Problem {
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        long a = scanner.nextLong(),b=scanner.nextLong();
+        int q= (int) (scanner.nextLong()%3);
+        switch(q){
+            case 1 -> System.out.println(a);
+            case 2 -> System.out.println(b);
+            default-> System.out.println(a^b);
+        }
+    
+    }
+
+}
