@@ -1,0 +1,26 @@
+//Language:java
+//Link: https://codeforces.com/group/MWSDmqGsZm/contest/223338/problem/G
+
+
+import java.util.Scanner;
+
+/**
+ *
+ * @author kareem
+ */
+public class Problem {
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        long number = scanner.nextLong(), result = 0;
+        int n = (int) Math.sqrt(number);
+        for (int i = 1; i <= n; i++) {
+            if (number % i == 0) {
+                result += i;
+                result += i != Math.sqrt(number) ? number / i : 0;
+            }
+        }
+        System.out.println(result);
+    }
+
+}
