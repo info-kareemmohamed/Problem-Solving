@@ -1,0 +1,36 @@
+//Language:java
+//Link: https://codeforces.com/group/MWSDmqGsZm/contest/223338/problem/H
+
+
+
+import java.util.Scanner;
+
+/**
+ *
+ * @author kareem
+ */
+public class Problem {
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        long num1 = scanner.nextLong();
+        long num2 = scanner.nextLong();
+        System.out.println(GCD(num1, num2) + " " + LCM(num1, num2));
+        scanner.close();
+    }
+
+    public static long GCD(long num1, long num2) {
+        while (num2 != 0) {
+            long temp = num1;
+            num1 = num2;
+            num2 = temp % num1;
+        }
+        return num1;
+    }
+
+    public static long LCM(long num1, long num2) {
+        return (num1 / GCD(num1, num2)) * num2;
+    }
+
+}
+
