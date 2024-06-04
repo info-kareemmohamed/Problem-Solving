@@ -1,0 +1,25 @@
+//Language:java
+//Link:https://codeforces.com/group/MWSDmqGsZm/contest/223338/problem/I
+
+
+
+import java.util.Scanner;
+
+/**
+ *
+ * @author kareem
+ */
+public class Problem {
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        long num1 = scanner.nextLong(), num2 = scanner.nextLong(), x = scanner.nextLong(), max = Math.max(num1, num2), min = Math.min(num1, num2);
+        System.out.println((sum(max / x) * x) - (sum((min - 1) / x) * x));
+        scanner.close();
+    }
+
+    public static long sum(long n) {
+        return n * (n + 1) / 2;
+    }
+
+}
