@@ -1,0 +1,24 @@
+//Language:java
+//Link: https://codeforces.com/group/MWSDmqGsZm/contest/223338/problem/Q
+
+
+import java.util.Scanner;
+
+/**
+ *
+ * @author kareem
+ */
+public class Problem {
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        long num = sc.nextLong(), num2 = sc.nextLong(), num3 = sc.nextLong(), max = Math.max(num, num2), min = Math.min(num, num2), result=1;
+        for (long i = min; i <= max; i++) {
+            result *= i;
+            result %= num3;
+        }
+        System.out.println(result);
+        sc.close();
+    }
+
+}
