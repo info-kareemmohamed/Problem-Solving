@@ -1,0 +1,28 @@
+//Language:c++
+//Link:https://codeforces.com/group/MWSDmqGsZm/contest/223339/problem/H
+
+#include <iostream>
+using namespace std;
+
+int totalRows;
+
+void printPattern(int currentRow) {
+    if (currentRow == 0) {
+        return;
+    }
+    for (int i = 1; i <= totalRows - currentRow; i++) {
+        cout << " ";
+    }
+    for (int i = 1; i <= currentRow * 2 - 1; i++) {
+        cout << "*";
+    }
+    cout << endl;
+    printPattern(currentRow - 1);
+}
+
+int main() {
+    int numRows;
+    cin >> numRows;
+    totalRows = numRows;
+    printPattern(numRows);
+}
