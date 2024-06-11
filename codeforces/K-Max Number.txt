@@ -1,0 +1,30 @@
+//Language:java
+//Link:https://codeforces.com/group/MWSDmqGsZm/contest/223339/problem/K
+
+import java.util.Scanner;
+
+/**
+ *
+ * @author kareem
+ */
+public class Problem {
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int n = scanner.nextInt();
+        int arr[] = new int[n];
+        for (int i = 0; i < n; i++) {
+            arr[i] = scanner.nextInt();
+        }
+        System.out.println(findMaxNumber(arr, n, 0));
+        scanner.close();
+    }
+
+    public static int findMaxNumber(int[] arr, int n, int index) {
+        if (index == n - 1) {
+            return arr[index];
+        }
+        return Math.max(arr[index], findMaxNumber(arr, n, index + 1));
+    }
+
+}
