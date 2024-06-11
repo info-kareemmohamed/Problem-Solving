@@ -1,0 +1,29 @@
+//Language:java
+//Link: https://codeforces.com/group/MWSDmqGsZm/contest/223338/problem/O
+
+import java.util.Scanner;
+import java.math.BigInteger;
+
+/**
+ *
+ * @author kareem
+ */
+public class Problem {
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        String number = scanner.next();
+        performAdditionAndMultiplication(number);
+        scanner.close();
+    }
+
+    public static void performAdditionAndMultiplication(String number) {
+        BigInteger bigNumber = new BigInteger(number);
+        BigInteger constantNumber = new BigInteger("9999");
+
+        System.out.println(bigNumber.add(constantNumber));
+        System.out.println(bigNumber.multiply(constantNumber));
+
+    }
+
+}
