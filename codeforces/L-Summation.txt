@@ -1,0 +1,30 @@
+//Language:java
+//Link: https://codeforces.com/group/MWSDmqGsZm/contest/223339/problem/L
+
+
+import java.util.Scanner;
+
+/**
+ *
+ * @author kareem
+ */
+public class Problem {
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int n = scanner.nextInt();
+        long arr[] = new long[n];
+        for (int i = 0; i < n; i++) {
+            arr[i] = scanner.nextLong();
+        }
+        System.out.println(sumArray(arr, n));
+        scanner.close();
+    }
+
+    public static long sumArray(long[] array, int n) {
+        if (n == 0) {
+            return 0;
+        }
+        return array[n - 1] + sumArray(array, n - 1);
+    }
+}
