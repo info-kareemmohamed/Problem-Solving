@@ -1,0 +1,66 @@
+//Language:java
+//Link: https://codeforces.com/group/MWSDmqGsZm/contest/223339/problem/N
+
+
+
+
+
+
+
+import java.util.Scanner;
+
+/**
+ *
+ * @author kareem
+ */
+public class Problem {
+
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        int R = scanner.nextInt();
+        int C = scanner.nextInt();
+
+        int[][] A = new int[R][C];
+        int[][] B = new int[R][C];
+        int[][] sum = new int[R][C];
+
+        for (int i = 0; i < R; i++) {
+            for (int j = 0; j < C; j++) {
+                A[i][j] = scanner.nextInt();
+            }
+        }
+
+        for (int i = 0; i < R; i++) {
+            for (int j = 0; j < C; j++) {
+                B[i][j] = scanner.nextInt();
+            }
+        }
+
+        // Compute the sum using recursion
+        sumMatrices(A, B, sum, R, C, 0, 0);
+
+        // Print the result matrix
+        for (int i = 0; i < R; i++) {
+            for (int j = 0; j < C; j++) {
+                System.out.print(sum[i][j] + " ");
+            }
+            System.out.println();
+        }
+        scanner.close();
+    }
+
+    public static void sumMatrices(int[][] A, int[][] B, int[][] sum, int R, int C, int row, int col) {
+        if (row >= R) {
+            return;
+        }
+
+        if (col < C) {
+            sum[row][col] = A[row][col] + B[row][col];
+            sumMatrices(A, B, sum, R, C, row, col + 1);
+        } else {
+            sumMatrices(A, B, sum, R, C, row + 1, 0);
+        }
+    }
+}
