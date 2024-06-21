@@ -1,0 +1,32 @@
+//Language:java
+//Link: https://codeforces.com/group/MWSDmqGsZm/contest/223339/problem/Q
+
+
+import java.util.Scanner;
+
+/**
+ *
+ * @author kareem
+ */
+public class Problem {
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int n = scanner.nextInt();
+        System.out.println(sequenceLength(n));
+        scanner.close();
+    }
+
+    public static int sequenceLength(int n) {
+        if (n <= 1) {
+            return 1;
+        }
+
+        if (n % 2 != 0) {
+            return 1 + sequenceLength((n * 3) + 1);
+        } else {
+            return 1 + sequenceLength(n / 2);
+
+        }
+    }
+}
