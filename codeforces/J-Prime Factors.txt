@@ -1,0 +1,46 @@
+//Language:java
+//Link: https://codeforces.com/group/MWSDmqGsZm/contest/223338/problem/J
+
+
+
+
+import java.util.Scanner;
+
+/**
+ *
+ * @author kareem
+ */
+public class Problem {
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        long num = scanner.nextLong();
+        scanner.close();
+
+        boolean flag = false;
+        for (int i = 2; i <= num / 2; i++) {
+            int counter = 0;
+            while (num % i == 0) {
+                counter++;
+                num /= i;
+            }
+            if (counter > 0 && flag) {
+                System.out.print("*");
+            }
+            if (counter > 0) {
+                System.out.print("(" + i + "^" + counter + ")");
+                flag = true;
+            }
+            if (num == 1) {
+                break;
+            }
+        }
+        if (num > 1 && flag) {
+            System.out.print("*");
+        }
+        if (num > 1) {
+            System.out.print("(" + num + "^1)");
+        }
+    }
+
+}
