@@ -1,0 +1,32 @@
+//Language:java
+//Link: https://codeforces.com/group/MWSDmqGsZm/contest/223338/problem/Z
+
+
+
+import java.util.Scanner;
+
+/**
+ *
+ * @author kareem
+ */
+public class Problem {
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        double r = scanner.nextDouble(), s = scanner.nextDouble();
+
+        double diagonalOfSquare = Math.sqrt(2) * s;
+        double diameterOfCircle = 2 * r;
+
+        if (diameterOfCircle >= diagonalOfSquare) {
+            System.out.println("Circle");
+        } else if (s >= diameterOfCircle) {
+            System.out.println("Square");
+        } else {
+            System.out.println("Complex");
+        }
+
+        scanner.close();
+    }
+}
