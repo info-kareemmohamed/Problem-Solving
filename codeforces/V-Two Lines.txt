@@ -1,0 +1,55 @@
+//Language:java
+//Link: https://codeforces.com/group/MWSDmqGsZm/contest/223338/problem/V
+
+
+
+
+import java.util.Scanner;
+
+/**
+ *
+ * @author kareem
+ */
+public class Problem {
+
+    public static void main(String[] args) {
+         Scanner sc = new Scanner(System.in);
+        
+        
+        // Read the first line coordinates
+        int X1 = sc.nextInt();
+        int Y1 = sc.nextInt();
+        int X2 = sc.nextInt();
+        int Y2 = sc.nextInt();
+        
+        // Read the second line coordinates
+        int X3 = sc.nextInt();
+        int Y3 = sc.nextInt();
+        int X4 = sc.nextInt();
+        int Y4 = sc.nextInt();
+        
+        // Calculate the differences
+        int deltaX1 = X2 - X1;
+        int deltaY1 = Y2 - Y1;
+        int deltaX2 = X4 - X3;
+        int deltaY2 = Y4 - Y3;
+        
+        // Check if both lines are vertical
+        if (deltaX1 == 0 && deltaX2 == 0) {
+            System.out.println("YES");
+        } 
+        // Check if one line is vertical and the other is not
+        else if (deltaX1 == 0 || deltaX2 == 0) {
+            System.out.println("NO");
+        } 
+        // Check if slopes are equal
+        else if (deltaY1 * deltaX2 == deltaY2 * deltaX1) {
+            System.out.println("YES");
+        } 
+        else {
+            System.out.println("NO");
+        }
+        
+        sc.close();
+    }
+}
