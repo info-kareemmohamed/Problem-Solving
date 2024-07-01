@@ -1,0 +1,53 @@
+//Language:java
+//Link: https://codeforces.com/group/MWSDmqGsZm/contest/223338/problem/W
+
+
+import java.util.Scanner;
+
+/**
+ *
+ * @author kareem
+ */
+public class Problem {
+
+    public static void main(String[] args) {
+      Scanner scanner = new Scanner(System.in);
+
+        // Read the coordinates for the first circle
+        double x1 = scanner.nextDouble();
+        double y1 = scanner.nextDouble();
+        double x2 = scanner.nextDouble();
+        double y2 = scanner.nextDouble();
+
+        // Read the coordinates for the second circle
+        double x3 = scanner.nextDouble();
+        double y3 = scanner.nextDouble();
+        double x4 = scanner.nextDouble();
+        double y4 = scanner.nextDouble();
+
+        // Calculate the midpoints of the diameters (centers of the circles)
+        double midX1 = (x1 + x2) / 2;
+        double midY1 = (y1 + y2) / 2;
+        double midX2 = (x3 + x4) / 2;
+        double midY2 = (y3 + y4) / 2;
+
+        // Calculate the radii of the circles
+        double r1 = Math.sqrt(Math.pow(x1 - x2, 2) + Math.pow(y1 - y2, 2)) / 2;
+        double r2 = Math.sqrt(Math.pow(x3 - x4, 2) + Math.pow(y3 - y4, 2)) / 2;
+
+        // Calculate the distance between the centers of the circles
+        double distanceBetweenCenters = Math.sqrt(Math.pow(midX1 - midX2, 2) + Math.pow(midY1 - midY2, 2));
+
+        // Calculate the sum of the radii
+        double sumOfRadii = r1 + r2;
+
+        // Check if the circles intersect
+        if (distanceBetweenCenters > sumOfRadii) {
+            System.out.println("NO");
+        } else {
+            System.out.println("YES");
+        }
+
+        scanner.close();
+    }
+}
