@@ -1,0 +1,45 @@
+//Language:java
+//Link: https://codeforces.com/group/MWSDmqGsZm/contest/223338/problem/T
+
+
+
+
+import java.util.Scanner;
+
+/**
+ *
+ * @author kareem
+ */
+public class Problem {
+
+    public static void main(String[] args) {
+      Scanner scanner = new Scanner(System.in);
+
+        // Reading the first line inputs
+        long X = scanner.nextLong();
+        long Y = scanner.nextLong();
+        long R = scanner.nextLong();
+        int N = scanner.nextInt();
+
+        // Pre-computing the square of the radius
+        long R_squared = R * R;
+
+        // Process each point
+        for (int i = 0; i < N; i++) {
+            long xi = scanner.nextLong();
+            long yi = scanner.nextLong();
+            
+            // Calculate the distance from the center to the point squared
+            long distance_squared = (xi - X) * (xi - X) + (yi - Y) * (yi - Y);
+            
+            // Check if the point is within or on the circle
+            if (distance_squared <= R_squared) {
+                System.out.println("YES");
+            } else {
+                System.out.println("NO");
+            }
+        }
+
+        scanner.close();
+    }
+}
