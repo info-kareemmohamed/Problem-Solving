@@ -1,0 +1,50 @@
+//Language:java
+//Link: https://codeforces.com/group/MWSDmqGsZm/contest/223206/problem/A
+
+
+import java.util.Scanner;
+
+public class Main {
+
+    public static boolean check(String word) {
+        int size = word.length() / 2;
+        boolean res = true;
+        for (int i = 0, j = word.length() - 1; i < size; i++, j--) {
+            if (word.charAt(i) == word.charAt(j) || (word.charAt(i) == '?' && word.charAt(j) != '?') ||
+                (word.charAt(i) != '?' && word.charAt(j) == '?') || word.equals("?")) {
+                res = true;
+            } else {
+                res = false;
+                break;
+            }
+        }
+        return res;
+    }
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        String value = scanner.nextLine();
+        int size = value.length() / 2;
+        if (!value.equals("?")) {
+            if (check(value)) {
+                StringBuilder result = new StringBuilder(value);
+                for (int i = 0, j = value.length() - 1; i <= size; i++, j--) {
+                    if (value.charAt(i) == '?' && value.charAt(j) != '?') {
+                        result.setCharAt(i, value.charAt(j));
+                    } else if (value.charAt(i) != '?' && value.charAt(j) == '?') {
+                        result.setCharAt(j, value.charAt(i));
+                    } else if (value.charAt(i) == '?' && value.charAt(j) == '?') {
+                        result.setCharAt(i, 'a');
+                        result.setCharAt(j, 'a');
+                    }
+                }
+                System.out.println(result.toString());
+            } else {
+                System.out.println(-1);
+            }
+        } else {
+            System.out.println("a");
+        }
+        scanner.close();
+    }
+}
