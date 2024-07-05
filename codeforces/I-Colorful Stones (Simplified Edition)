@@ -1,0 +1,26 @@
+Language:java
+Link: https://codeforces.com/group/MWSDmqGsZm/contest/223206/problem/I
+
+
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        
+        String inputString1, inputString2;
+        inputString1 = scanner.next();
+        inputString2 = scanner.next();
+        int matchCounter = 0, n=inputString2.length();
+        
+        for (int i = 0; i < n; i++) {
+            if (inputString1.charAt(matchCounter) == inputString2.charAt(i)) {
+                matchCounter++;
+            }
+        }
+        matchCounter++;
+        System.out.println(matchCounter);
+        
+        scanner.close();
+    }
+}
