@@ -1,0 +1,26 @@
+Language:java
+Link: https://codeforces.com/group/MWSDmqGsZm/contest/223206/problem/K
+
+
+#include<bits/stdc++.h>
+using namespace std;
+int main() 
+{
+    ios_base::sync_with_stdio(0);
+    cin.tie(0);
+    cout.tie(0);
+    
+    int countTestCases;
+    bool isPrime[51] = {0, 0, 0, 0, 1, 1, 1, 0, 1, 0, 0, 0, 1, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0};
+    
+    int numTestCases;
+    cin >> numTestCases;
+    
+    while(numTestCases--) {
+        cin >> countTestCases;
+        if(isPrime[countTestCases] == 1)
+            cout << "prime\n";
+        else 
+            cout << "not prime\n";
+    } 
+}
