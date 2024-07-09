@@ -1,0 +1,33 @@
+Language:java
+Link: https://codeforces.com/group/MWSDmqGsZm/contest/223206/problem/Q
+
+
+import java.util.Scanner;
+
+/**
+ *
+ * @author kareem
+ */
+public class Problem {
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        String inputString = scanner.next();
+        int currentPosition = 97;
+        int totalSteps = 0;
+        scanner.close();
+        for (int i = 0; i < inputString.length(); i++) { 
+            int difference = Math.abs(inputString.charAt(i) - currentPosition); 
+            if (difference <= 13) {
+                totalSteps += difference;
+            } else {
+                totalSteps += (26 - difference);
+            }
+            currentPosition = inputString.charAt(i);
+        }
+
+        System.out.println(totalSteps);
+
+    }
+
+}
