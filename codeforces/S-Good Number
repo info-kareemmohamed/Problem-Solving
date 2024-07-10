@@ -1,0 +1,39 @@
+Language:java
+Link: https://codeforces.com/group/MWSDmqGsZm/contest/223206/problem/S
+
+import java.util.Scanner;
+
+/**
+ *
+ * @author kareem
+ */
+public class Problem {
+
+    public static void main(String[] args) {
+      Scanner scanner = new Scanner(System.in);
+
+        int size = scanner.nextInt();
+        int range = scanner.nextInt();
+        scanner.nextLine();
+
+        String myRange = "0123456789";
+        int result = 0;
+
+        for (int i = 1; i <= size; i++) {
+            int counter = 0;
+            String num = scanner.nextLine();
+
+            for (int z = 0; z <= range; z++) {
+                if (num.contains(myRange.substring(z, z + 1))) {
+                    counter++;
+                }
+            }
+
+            if (counter == range + 1) {
+                result++;
+            }
+        }
+        scanner.close();
+        System.out.println(result);
+    }
+}
