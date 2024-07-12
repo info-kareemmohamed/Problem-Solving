@@ -1,0 +1,20 @@
+Language:java
+Link: https://codeforces.com/group/MWSDmqGsZm/contest/223206/problem/W
+
+import java.util.Scanner;
+
+/**
+ *
+ * @author kareem
+ */
+public class Problem {
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        String a = scanner.next(), b = scanner.next();
+        scanner.close();
+        System.out.println(a.equals(b) ? "-1" : String.valueOf(Math.max(a.length(), b.length())));
+
+    }
+}
+
