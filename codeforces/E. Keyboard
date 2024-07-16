@@ -1,0 +1,36 @@
+Language:java
+Link: https://codeforces.com/group/MWSDmqGsZm/contest/223207/problem/E
+
+import java.util.Scanner;
+
+/**
+ *
+ * @author kareem
+ */
+public class Problem {
+
+    public static void main(String[] args) {
+        String keyboard = "qwertyuiopasdfghjkl;zxcvbnm,./";
+        
+        Scanner scanner = new Scanner(System.in);
+        
+        char LR = scanner.next().charAt(0);
+        
+        String s2 = scanner.next();
+        
+        StringBuilder s3 = new StringBuilder();
+        
+        for (int i = 0; i < s2.length(); i++) {
+            int index = keyboard.indexOf(s2.charAt(i));
+            if (LR == 'R') {
+                s3.append(keyboard.charAt(index - 1));
+            } else {
+                s3.append(keyboard.charAt(index + 1));
+            }
+        }
+        
+        System.out.println(s3.toString());
+        
+        scanner.close();
+    }
+}
