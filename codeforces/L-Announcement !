@@ -1,0 +1,39 @@
+Language:java
+Link: https://codeforces.com/group/MWSDmqGsZm/contest/223207/problem/L
+
+import java.util.Scanner;
+
+/**
+ *
+ * @author kareem
+ */
+public class Problem {
+
+    public static void main(String[] args) {
+          Scanner scanner = new Scanner(System.in);
+        
+        long size = scanner.nextLong();
+        long[] arr1 = new long[(int)size];
+        long[] arr2 = new long[10000001];
+        
+        for (long i = 0; i < size; i++) {
+            arr1[(int)i] = scanner.nextLong();
+            arr2[(int)arr1[(int)i]]++;
+        }
+        
+        long res = 0;
+        for (int i = 0; i < 10000001; i++) {
+            if (arr2[i] > 1) {
+                res += arr2[i] - 1;
+            }
+        }
+        
+        if (res == 0) {
+            System.out.println(-1);
+        } else {
+            System.out.println(res);
+        }
+        
+        scanner.close();
+    }
+}
