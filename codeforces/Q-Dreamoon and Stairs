@@ -1,0 +1,29 @@
+Language:java
+Link: https://codeforces.com/group/MWSDmqGsZm/contest/223207/problem/Q
+
+import java.util.Scanner;
+
+/**
+ *
+ * @author kareem
+ */
+public class Problem {
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        int n = scanner.nextInt();
+        int m = scanner.nextInt();
+
+        int minSteps = (n + 1) / 2;
+
+        for (int steps = minSteps; steps <= n; steps++) {
+            if (steps % m == 0) {
+                System.out.println(steps);
+                return;
+            }
+        }
+        scanner.close();
+        System.out.println(-1);
+    }
+}
