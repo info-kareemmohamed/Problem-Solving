@@ -1,0 +1,43 @@
+//Language:java
+//Link: https://codeforces.com/group/MWSDmqGsZm/contest/223207/problem/H
+
+import java.util.Scanner;
+
+/**
+ *
+ * @author kareem
+ */
+public class Problem {
+
+    public static void main(String[] args) {
+         Scanner scanner = new Scanner(System.in);
+        
+        int size = scanner.nextInt();
+        String sq = scanner.next();
+        long[] arr = new long[size];
+        
+        for (int i = 0; i < size; i++) {
+            arr[i] = scanner.nextLong();
+        }
+        
+        long time = 0;
+        long minTime = 100000000000L;
+        
+        for (int i = 0; i < size - 1; i++) {
+            if (sq.charAt(i) == 'R' && sq.charAt(i + 1) == 'L') {
+                time = (arr[i + 1] - arr[i]) / 2;
+                if (time < minTime) {
+                    minTime = time;
+                }
+            }
+        }
+        
+        if (minTime == 100000000000L) {
+            System.out.println(-1);
+        } else {
+            System.out.println(minTime);
+        }
+        
+        scanner.close();
+    }
+}
