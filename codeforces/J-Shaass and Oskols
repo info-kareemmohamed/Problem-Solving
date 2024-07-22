@@ -1,0 +1,47 @@
+Language:java
+Link: https://codeforces.com/group/MWSDmqGsZm/contest/223207/problem/J
+
+import java.util.Scanner;
+
+/**
+ *
+ * @author kareem
+ */
+public class Problem {
+
+    public static void main(String[] args) {
+          Scanner scanner = new Scanner(System.in);
+
+        int n = scanner.nextInt();
+        int[] birds = new int[n];
+
+        for (int i = 0; i < n; i++) {
+            birds[i] = scanner.nextInt();
+        }
+
+        int m = scanner.nextInt();
+
+        for (int i = 0; i < m; i++) {
+            int wireNum = scanner.nextInt();
+            int birdPos = scanner.nextInt();
+
+            wireNum--;
+
+            if (wireNum > 0) {
+                birds[wireNum - 1] += birdPos - 1;
+            }
+
+            if (wireNum < n - 1) {
+                birds[wireNum + 1] += birds[wireNum] - birdPos;
+            }
+
+            birds[wireNum] = 0;
+        }
+
+        for (int i = 0; i < n; i++) {
+            System.out.println(birds[i]);
+        }
+
+        scanner.close();
+    }
+}
