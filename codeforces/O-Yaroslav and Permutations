@@ -1,0 +1,37 @@
+Language:java
+Link: https://codeforces.com/group/MWSDmqGsZm/contest/223207/problem/O
+
+
+import java.util.Scanner;
+import java.util.Map;
+import java.util.HashMap;
+
+/**
+ *
+ * @author kareem
+ */
+public class Problem {
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int n = scanner.nextInt();
+
+        Map<Integer, Integer> map = new HashMap<>();
+        for (int i = 0; i < n; i++) {
+            int number = scanner.nextInt();
+            int count = map.getOrDefault(number, 0) + 1;
+            map.put(number, count);
+        }
+        scanner.close();
+        
+        int maxValue = 0;
+        for (Map.Entry<Integer, Integer> entry : map.entrySet()) {
+            if (entry.getValue() > maxValue) {
+                maxValue = entry.getValue();
+            }
+        }
+
+        System.out.println(n % 2 == 0 ? maxValue <= (n / 2) ? "YES" : "NO" : maxValue <= (n / 2) + 1 ? "YES" : "NO");
+
+    }
+}
