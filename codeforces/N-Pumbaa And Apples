@@ -1,0 +1,42 @@
+//Language:C++
+//Link: https://codeforces.com/group/MWSDmqGsZm/contest/223207/problem/N
+
+
+#include <bits/stdc++.h>
+using namespace std;
+
+void optimizeIO() {
+    ios_base::sync_with_stdio(false);
+    cin.tie(nullptr);
+}
+
+int main() {
+    optimizeIO();
+
+    int numRows, numCols, numQueries;
+    cin >> numRows >> numCols >> numQueries;
+
+    vector<vector<int>> grid(numRows + 1, vector<int>(numCols + 1));
+    for (int i = 1; i <= numRows; ++i)
+        for (int j = 1; j <= numCols; ++j)
+            cin >> grid[i][j];
+
+    vector<int> rowMapping(numRows + 1), colMapping(numCols + 1);
+    iota(rowMapping.begin(), rowMapping.end(), 0);
+    iota(colMapping.begin(), colMapping.end(), 0);
+
+    while (numQueries--) {
+        char queryType;
+        int x, y;
+        cin >> queryType >> x >> y;
+
+        if (queryType == 'g')
+            cout << grid[rowMapping[x]][colMapping[y]] << "\n";
+        else if (queryType == 'r')
+            swap(rowMapping[x], rowMapping[y]);
+        else if (queryType == 'c')
+            swap(colMapping[x], colMapping[y]);
+    }
+
+    return 0;
+}
