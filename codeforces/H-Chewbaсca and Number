@@ -1,0 +1,18 @@
+Language:java
+Link: https://codeforces.com/group/MWSDmqGsZm/contest/223340/problem/H
+
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        String num = new Scanner(System.in).nextLine();
+        StringBuilder result = new StringBuilder(num.length());
+
+        for (int i = 0; i < num.length(); i++) {
+            char c = num.charAt(i);
+            result.append((i == 0 && c == '9') || c < '5' ? c : (char) ('9' - c + '0'));
+        }
+
+        System.out.print(result);
+    }
+}
