@@ -1,0 +1,62 @@
+Language:java
+Link: https://codeforces.com/group/MWSDmqGsZm/contest/223205/problem/I
+
+
+import java.util.Scanner;
+
+public class Problem {
+
+    private static final int MAX_SIZE = 500;
+
+
+
+   public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        int size = scanner.nextInt();
+        int row1 = scanner.nextInt() - 1; 
+        int row2 = scanner.nextInt() - 1;
+
+        int[][] matrix = new int[MAX_SIZE][MAX_SIZE];
+
+       
+        for (int i = 0; i < size; i++) {
+            for (int j = 0; j < size; j++) {
+                matrix[i][j] = scanner.nextInt();
+            }
+        }
+
+        swapRows(matrix, row1, row2, size);
+        swapColumns(matrix, row1, row2, size);
+
+        printMatrix(matrix, size);
+    }
+
+
+    public static void swapRows(int[][] matrix, int row1, int row2, int size) {
+        for (int i = 0; i < size; i++) {
+            int temp = matrix[row1][i];
+            matrix[row1][i] = matrix[row2][i];
+            matrix[row2][i] = temp;
+        }
+    }
+
+    public static void swapColumns(int[][] matrix, int col1, int col2, int size) {
+        for (int i = 0; i < size; i++) {
+            int temp = matrix[i][col1];
+            matrix[i][col1] = matrix[i][col2];
+            matrix[i][col2] = temp;
+        }
+    }
+
+    public static void printMatrix(int[][] matrix, int size) {
+        for (int i = 0; i < size; i++) {
+            for (int j = 0; j < size; j++) {
+                System.out.print(matrix[i][j] + " ");
+            }
+            System.out.println();
+        }
+    }
+
+ 
+}
