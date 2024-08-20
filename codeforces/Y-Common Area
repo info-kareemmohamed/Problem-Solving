@@ -1,0 +1,41 @@
+Language:java
+Link: https://codeforces.com/group/MWSDmqGsZm/contest/223338/problem/Y
+
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        long numberOfTestCases = scanner.nextLong();
+        
+        for (int caseNumber = 1; caseNumber <= numberOfTestCases; caseNumber++) {
+            long numberOfRectangles = scanner.nextLong();
+            
+            long maxLeftX = scanner.nextLong();
+            long maxBottomY = scanner.nextLong();
+            long minRightX = scanner.nextLong();
+            long minTopY = scanner.nextLong();
+            
+            for (int i = 1; i < numberOfRectangles; i++) {
+                long leftX = scanner.nextLong();
+                long bottomY = scanner.nextLong();
+                long rightX = scanner.nextLong();
+                long topY = scanner.nextLong();
+                
+                maxLeftX = Math.max(maxLeftX, leftX);
+                maxBottomY = Math.max(maxBottomY, bottomY);
+                minRightX = Math.min(minRightX, rightX);
+                minTopY = Math.min(minTopY, topY);
+            }
+            
+            if (minRightX > maxLeftX && minTopY > maxBottomY) {
+                long overlapArea = (minRightX - maxLeftX) * (minTopY - maxBottomY);
+                System.out.println("Case #" + caseNumber + ": " + overlapArea);
+            } else {
+                System.out.println("Case #" + caseNumber + ": 0");
+            }
+        }
+        
+        scanner.close();
+    }
+}
