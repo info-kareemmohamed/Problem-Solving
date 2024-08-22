@@ -1,0 +1,38 @@
+Language:java
+Link: https://codeforces.com/group/MWSDmqGsZm/contest/223340/problem/B
+
+
+import java.util.Scanner;
+import java.util.Stack;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        
+        String firstString = scanner.nextLine();  
+        String secondString = scanner.nextLine(); 
+        
+        Stack<Character> stack1 = new Stack<>();
+        Stack<Character> stack2 = new Stack<>();
+        
+        for (int i = 0; i < firstString.length(); i++) {
+            stack1.push(firstString.charAt(i));
+        }
+        
+        for (int i = 0; i < secondString.length(); i++) {
+            stack2.push(secondString.charAt(i));
+        }
+        
+        while (!stack1.isEmpty() && !stack2.isEmpty()) {
+            if (stack1.peek() != stack2.peek()) {
+                break;
+            }
+            stack1.pop();
+            stack2.pop();
+        }
+        
+        System.out.println(stack1.size() + stack2.size());
+        
+        scanner.close();
+    }
+}
