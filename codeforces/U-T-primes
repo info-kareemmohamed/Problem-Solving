@@ -1,0 +1,45 @@
+//Language:java
+//Link: https://codeforces.com/group/MWSDmqGsZm/contest/223207/problem/U
+
+import java.util.Scanner;
+
+public class TPrimeChecker {
+    private static boolean[] isNotPrime = new boolean[1000001];
+
+    public static void main(String[] args) {
+        sieveOfEratosthenes();
+
+        Scanner scanner = new Scanner(System.in);
+        int size = scanner.nextInt();
+
+        while (size-- > 0) {
+            long num = scanner.nextLong();
+            if (isTPrime(num)) {
+                System.out.println("YES");
+            } else {
+                System.out.println("NO");
+            }
+        }
+
+        scanner.close();
+    }
+
+    private static void sieveOfEratosthenes() {
+        isNotPrime[1] = true;
+
+        // Start the sieve from 2
+        for (int i = 2; i * i <= 1000000; i++) {
+            if (!isNotPrime[i]) {
+                for (int j = i * 2; j <= 1000000; j += i) {
+                    isNotPrime[j] = true;
+                }
+            }
+        }
+    }
+
+    private static boolean isTPrime(long num) {
+        long sqrt = (long) Math.sqrt(num);
+
+        return sqrt * sqrt == num && !isNotPrime[(int) sqrt];
+    }
+}
