@@ -1,0 +1,33 @@
+Language:java
+Link: https://codeforces.com/problemset/problem/151/A
+
+import java.util.Scanner;
+
+public class SoftDrinking {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        
+        int n = scanner.nextInt();  // number of friends
+        int k = scanner.nextInt();  // number of bottles
+        int l = scanner.nextInt();  // milliliters in each bottle
+        int c = scanner.nextInt();  // number of limes
+        int d = scanner.nextInt();  // number of slices per lime
+        int p = scanner.nextInt();  // grams of salt
+        int nl = scanner.nextInt(); // milliliters required per toast
+        int np = scanner.nextInt(); // grams of salt required per toast
+        
+        int totalDrink = k * l;
+        
+        int totalLimes = c * d;
+        
+        int toastsByDrink = totalDrink / nl;
+        int toastsByLimes = totalLimes;
+        int toastsBySalt = p / np;
+        
+        int maxToasts = Math.min(Math.min(toastsByDrink, toastsByLimes), toastsBySalt) / n;
+        
+        System.out.println(maxToasts);
+        
+        scanner.close();
+    }
+}
