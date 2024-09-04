@@ -1,0 +1,32 @@
+Language:java
+Link: https://codeforces.com/problemset/problem/758/A
+
+
+
+import java.util.Scanner;
+
+public class HolidayOfEquality {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        int n = scanner.nextInt(); 
+        int[] welfare = new int[n];
+        int maxWelfare = 0;
+
+        for (int i = 0; i < n; i++) {
+            welfare[i] = scanner.nextInt();
+            if (welfare[i] > maxWelfare) {
+                maxWelfare = welfare[i];
+            }
+        }
+
+        int totalBurles = 0;
+        for (int i = 0; i < n; i++) {
+            totalBurles += (maxWelfare - welfare[i]);
+        }
+
+        System.out.println(totalBurles);
+
+        scanner.close();
+    }
+}
