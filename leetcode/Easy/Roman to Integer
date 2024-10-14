@@ -1,0 +1,32 @@
+Language:java
+Link: https://leetcode.com/problems/roman-to-integer/
+
+class Solution {
+    public int romanToInt(String s) {
+         Map<Character, Integer> romanMap = new HashMap<>();
+        romanMap.put('I', 1);
+        romanMap.put('V', 5);
+        romanMap.put('X', 10);
+        romanMap.put('L', 50);
+        romanMap.put('C', 100);
+        romanMap.put('D', 500);
+        romanMap.put('M', 1000);
+        
+        int total = 0;
+        int length = s.length();
+
+        for (int i = 0; i < length; i++) {
+            // Get the value of the current numeral
+            int value = romanMap.get(s.charAt(i));
+            
+            // Check if the next numeral exists and is greater
+            if (i + 1 < length && value < romanMap.get(s.charAt(i + 1))) {
+                total -= value;  // Subtractive combination
+            } else {
+                total += value;  // Add the value
+            }
+        }
+        
+        return total;
+    }
+}
