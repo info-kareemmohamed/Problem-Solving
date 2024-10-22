@@ -1,0 +1,49 @@
+//Language: java
+//Link: https://codeforces.com/group/MWSDmqGsZm/contest/223207/problem/Z
+
+
+import java.util.Scanner;
+
+public class Main {
+    
+    // Function to calculate GCD
+    public static long gcd(long a, long b) {
+        while (b != 0) {
+            long temp = b;
+            b = a % b;
+            a = temp;
+        }
+        return a;
+    }
+
+    // Function to calculate LCM
+    public static long lcm(long a, long b) {
+        return (a * b) / gcd(a, b);
+    }
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        
+        // Reading the input fractions
+        String fraction1 = sc.next();
+        String fraction2 = sc.next();
+        
+        // Parsing the numerators and denominators
+        String[] frac1 = fraction1.split("/");
+        String[] frac2 = fraction2.split("/");
+        
+        long a1 = Long.parseLong(frac1[0]);
+        long b1 = Long.parseLong(frac1[1]);
+        long a2 = Long.parseLong(frac2[0]);
+        long b2 = Long.parseLong(frac2[1]);
+        
+        // Finding the LCM of the numerators
+        long numerator = lcm(a1, a2);
+        
+        // Finding the GCD of the denominators
+        long denominator = gcd(b1, b2);
+        
+        // Printing the result
+        System.out.println(numerator + "/" + denominator);
+    }
+}
