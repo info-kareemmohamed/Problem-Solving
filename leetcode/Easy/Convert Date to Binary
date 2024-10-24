@@ -1,0 +1,22 @@
+Language:java
+Link: https://leetcode.com/problems/convert-date-to-binary/
+
+
+class Solution {
+    public String convertDateToBinary(String date) {
+        
+        // Split the date string into year, month, and day
+        String[] parts = date.split("-");
+        int year = Integer.parseInt(parts[0]);
+        int month = Integer.parseInt(parts[1]);
+        int day = Integer.parseInt(parts[2]);
+
+        // Convert each part to its binary representation without leading zeroes
+        String yearBinary = Integer.toBinaryString(year);
+        String monthBinary = Integer.toBinaryString(month);
+        String dayBinary = Integer.toBinaryString(day);
+
+        // Concatenate the binary representations with hyphens
+        return yearBinary + "-" + monthBinary + "-" + dayBinary;
+    }
+}
