@@ -3,18 +3,23 @@
 
 
 class Solution {
-    public boolean isPalindrome(int x) {
-        String s = String.valueOf(x);
-        int n = s.length(), j = n - 1;
-        boolean flag = true;
-        
-        for (int i = 0; i < n ; i++,j--) {
-            if (s.charAt(i) != s.charAt(j)) {
-                flag = false;
-                break;
-            }
-         
-        } 
-        return flag;
+       public boolean isPalindrome(int x) {
+        // Negative numbers and numbers ending with 0 (except 0 itself) cannot be palindromes
+        if (x < 0 || (x % 10 == 0 && x != 0)) {
+            return false;
+        }
+
+        int reversedHalf = 0;
+        // Reverse only the second half of the number
+        while (x > reversedHalf) {
+            // Add the last digit of x to reversedHalf
+            reversedHalf = reversedHalf * 10 + x % 10;
+            // Remove the last digit from x
+            x /= 10;
+        }
+
+        // Check if the reversed half matches the first half
+        // For odd-length numbers, discard the middle digit by dividing reversedHalf by 10
+        return x == reversedHalf || x == reversedHalf / 10;
     }
 }
