@@ -1,0 +1,50 @@
+//Language: java
+//Link: https://leetcode.com/problems/relative-sort-array/description/
+
+
+
+class Solution {
+    public int[] relativeSortArray(int[] arr1, int[] arr2) {
+        
+    // Find max value in arr1 to optimize frequency array size
+    int max = 0;
+    for (int num : arr1) {
+        max = Math.max(max, num);
+    }
+    
+    // Create frequency array only up to max value
+    int[] freq = new int[max + 1];
+    for (int num : arr1) {
+        freq[num]++;
+    }
+    
+    int index = 0;
+    int[] result = new int[arr1.length];
+    
+    // Place elements in the order specified by arr2
+    for (int num : arr2) {
+        while (freq[num] > 0) {
+            result[index++] = num;
+            freq[num]--;
+        }
+    }
+    
+    // Create a set of numbers from arr2 for O(1) lookups
+    boolean[] inArr2 = new boolean[max + 1];
+    for (int num : arr2) {
+        inArr2[num] = true;
+    }
+    
+    // Append remaining elements that weren't in arr2
+    for (int num = 0; num <= max; num++) {
+        if (!inArr2[num]) {
+            while (freq[num] > 0) {
+                result[index++] = num;
+                freq[num]--;
+            }
+        }
+    }
+    
+    return result;
+  }
+}
